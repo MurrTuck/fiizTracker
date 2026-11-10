@@ -31,3 +31,6 @@ ws[f"B{row}"].number_format = "h:mm AM/PM"
 ws[f"E{row}"].number_format = ws[f"F{row}"].number_format = "$#,##0.00"
 wb.save(FILE)
 print(f"Row {row}: {when:%m/%d/%Y %I:%M %p} MT | {location} | {drinks} drinks | ${price:.2f}")
+
+import subprocess
+subprocess.run([sys.executable, "export_csv.py"], check=True)
